@@ -4,6 +4,7 @@ import { AlignJustify } from "lucide-react";
 import { BellDot } from "lucide-react";
 import Photo from "../assets/people19.png";
 
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   return (
@@ -17,7 +18,6 @@ const Navbar = () => {
         </button>
         <img src={Photo} alt="this is image"  />
       </div>
-      
     </nav>
   );
 };
