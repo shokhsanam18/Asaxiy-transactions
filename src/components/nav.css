@@ -1,0 +1,57 @@
+.NavBar {
+    position: sticky;
+    display: flex;
+    box-shadow: 0 1px 2px 0px rgb(0 0 0 / 0.05);
+    padding: 20px;
+    height: 90px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SideBarMenu {
+    width: 60px;
+    height: 40px;
+   background-color: rgba(102, 97, 97, 0.027);
+   border: none;
+   border-radius: 5px;
+  
+}
+
+.Menu {
+    vertical-align: middle;
+    color: rgb(53, 51, 51);
+}
+
+.Menu:hover {
+    color: rgba(43, 38, 38, 0.615);
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    gap: 15px;
+}
+
+.Bell {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(102, 97, 97, 0.027);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.Bell:hover {
+    background-color: rgba(97, 91, 91, 0.027);
+    color: rgba(43, 38, 38, 0.615);
+    cursor: pointer;
+}
+
+img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(102, 97, 97, 0.027);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
