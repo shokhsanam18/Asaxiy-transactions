@@ -74,38 +74,6 @@ const Navbar = () => {
           </ul>
         </div>
       ) : null}
-      {/* <div className="SideBar h-screen w-[420px] fixed top-0 left-0 bg-red-300 flex p-5 gap-10 flex-col">
-        <div className="logo">
-          <a href="/">
-            <img src={Logo} alt="" />
-          </a>
-        </div>
-        <ul className="list-none no-underline flex justify-center items-center flex-col gap-3">
-          <li className=" w-full ">
-            <Link to="/tahlil">
-              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
-                <ChartPie className="inline-block" />
-                Tahlil
-              </button>
-            </Link>
-          </li>
-          <li className="w-full">
-            <Link to="/conversions">
-              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
-                <CircleDollarSign /> Valyuta kursi
-              </button>
-            </Link>
-          </li>
-          <li className="w-full">
-            <Link to="/transactions">
-              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
-                <ArrowLeftRight />
-                Transaktsiya boshqaruvi
-              </button>
-            </Link>
-          </li>
-        </ul>
-      </div> */}
     </>
   );
 };
