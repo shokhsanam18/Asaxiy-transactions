@@ -1,3 +1,4 @@
+import Transactions from "./components/Transactions"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-   
+      <Transactions/>
     </>
   )
 }
