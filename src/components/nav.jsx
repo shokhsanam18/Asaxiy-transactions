@@ -2,6 +2,9 @@
 import "./nav.css";
 import { AlignJustify } from "lucide-react";
 import { BellDot } from "lucide-react";
+import { ArrowLeftRight } from "lucide-react";
+import { ChartPie } from "lucide-react";
+import { CircleDollarSign } from "lucide-react";
 import Photo from "../assets/people19.png";
 import Logo from "../assets/asaxiy-logo.svg";
 import { Link } from "react-router-dom";
@@ -31,21 +34,35 @@ const Navbar = () => {
           />
         </div>
       </nav>
-      <div className="SideBar">
+      <div className="SideBar h-screen w-[420px]  bg-red-300 flex relative p-5 gap-5 flex-col">
         <div className="logo">
           <a href="/">
             <img src={Logo} alt="" />
           </a>
         </div>
-        <ul className="list-none no-underline">
-          <li className="text-red-400">
-            <Link to="/tahlil">Tahlil</Link>
+        <ul className="list-none no-underline flex justify-center items-center flex-col gap-3">
+          <li className=" w-full ">
+            <Link to="/tahlil">
+              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
+                <ChartPie className="inline-block" />
+                Tahlil
+              </button>
+            </Link>
           </li>
-          <li>
-            <Link to="/conversions">Valyuta kursi</Link>
+          <li className="w-full">
+            <Link to="/conversions">
+              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
+                <CircleDollarSign /> Valyuta kursi
+              </button>
+            </Link>
           </li>
-          <li>
-            <Link to="/transactions">Transaktsiya boshqaruvi</Link>
+          <li className="w-full">
+            <Link to="/transactions">
+              <button className="font-medium  bg-blue-500 text-white rounded-md flex items-center justify-start gap-3 p-2 text-xs uppercase w-full">
+                <ArrowLeftRight />
+                Transaktsiya boshqaruvi
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
