@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./nav.css";
 import { AlignJustify } from "lucide-react";
 import { BellDot } from "lucide-react";
@@ -10,13 +10,18 @@ import Logo from "../assets/asaxiy-logo.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  // const [nav, setNav] = useState(false);
+  const [side, setSideBar] = useState(false);
+
+  const SideBarShow = () => setSideBar(!side);
 
   return (
     <>
-      <nav className="NavBar sticky flex shadow-sm p-5 h-[90px] justify-between items-center">
+      <nav className="NavBar sticky top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap">
         <div className="flex items-center justify-center">
-          <button className="SideBarMenu w-16 h-11 bg-neutral-100 border-none rounded-md flex justify-center items-center">
+          <button
+            className="SideBarMenu w-16 h-11 bg-neutral-100 border-none rounded-md flex justify-center items-center hover:bg-gray-100"
+            onClick={SideBarShow}
+          >
             <AlignJustify className="Menu text-gray-800 hover:text-gray-600" />
           </button>
         </div>
@@ -34,7 +39,42 @@ const Navbar = () => {
           />
         </div>
       </nav>
-      <div className="SideBar h-screen w-[420px]  bg-red-300 flex relative p-5 gap-5 flex-col">
+
+      {side ? (
+        <div className="SideBar h-screen w-[320px] fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col ">
+          <div className="logo">
+            <a href="/">
+              <img src={Logo} alt="" />
+            </a>
+          </div>
+          <ul className="list-none no-underline flex justify-center items-start flex-col gap-4">
+            <li className=" w-[260px] ">
+              <Link to="/tahlil">
+                <button className="font-bold  bg-blue-600 text-white rounded-md flex items-center justify-start gap-3 p-3 text-xs uppercase w-full hover:shadow-xl">
+                  <ChartPie className="inline-block" />
+                  Tahlil
+                </button>
+              </Link>
+            </li>
+            <li className="w-[260px]">
+              <Link to="/conversions">
+                <button className="font-bold  bg-blue-600 text-white rounded-md flex items-center justify-start gap-3 p-3 text-xs uppercase w-full hover:shadow-xl">
+                  <CircleDollarSign /> Valyuta kursi
+                </button>
+              </Link>
+            </li>
+            <li className="w-[260px]">
+              <Link to="/transactions">
+                <button className="font-bold bg-blue-600 text-white rounded-md flex items-center justify-start gap-3 p-3 text-xs uppercase w-full hover:shadow-xl">
+                  <ArrowLeftRight />
+                  Transaktsiya boshqaruvi
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      ) : null}
+      {/* <div className="SideBar h-screen w-[420px] fixed top-0 left-0 bg-red-300 flex p-5 gap-10 flex-col">
         <div className="logo">
           <a href="/">
             <img src={Logo} alt="" />
@@ -65,7 +105,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };
