@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./nav.css";
 import { AlignJustify } from "lucide-react";
 import { BellDot } from "lucide-react";
 import { ArrowLeftRight } from "lucide-react";
