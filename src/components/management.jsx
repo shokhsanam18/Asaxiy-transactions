@@ -60,9 +60,9 @@ const TransactionApp = () => {
                       <button onClick={buttonAddTransaction}>Qo'shish</button>
                     </div>
                 </div>)}
-
+                <br /><br /><br /><br /><hr /><br />
+                <h2>Filtrlar</h2>
     <div className="filters">
-        <h2>Filtrlar</h2>
         <input type="date" value={filterDate} onChange={(e) => setFilterDate(e.target.value)} placeholder="Filtrlash uchun sana"/>
         <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)}>
             <option value="">Filtrlash uchun kategoriya</option>
@@ -73,28 +73,32 @@ const TransactionApp = () => {
         </select>
     </div>
 
-    {filteredTransactions.length > 0 && (
-        <table className="transaction-table">
-            <thead>
-                <tr>
-                    <th>Miqdori</th>
-                    <th>Kategoriya</th>
-                    <th>Turi</th>
-                    <th>Sanasi</th>
-                </tr>
-            </thead>
-            <tbody>
-                {filteredTransactions.map((transaction, index) => (
+ <table className="transaction-table">
+    <thead>
+        <tr>
+            <th>Miqdori</th>
+            <th>Kategoriya</th>
+            <th>Turi</th>
+            <th>Sanasi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {filteredTransactions.length > 0 ? (
+            filteredTransactions.map((transaction, index) => (
                 <tr key={index}>
                     <td>{transaction.amount}</td>
                     <td>{transaction.category}</td>
                     <td>{transaction.type}</td>
                     <td>{transaction.date}</td>
                 </tr>
-                ))}
-            </tbody>
-        </table>
-    )}
+            ))
+        ) : (
+            <tr>
+                <td colSpan="4">Ma'lumotlar mavjud emas</td>
+            </tr>
+        )}
+    </tbody>
+</table>
 </div>
 );
 };
