@@ -95,9 +95,33 @@ function Conversions() {
             Konvertatsiya qilingan holati
           </p>
         </div>
+    <div className="conversionMain">
+      <h2 className="converter-title">Valyuta kursi</h2>
+      {error && <div className="error-message">{error}</div>}
+      <div>
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={fromCurrency}
+          onChangeCurrency={(e) => setFromCurrency(e.target.value)}
+          onChangeAmount={handleFromAmountChange}
+          amount={fromAmount}
+        />
+      </div>
+      <div className="equals">{result}</div>
+      <div>
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={toCurrency}
+          onChangeCurrency={(e) => setToCurrency(e.target.value)}
+          onChangeAmount={handleToAmountChange}
+          amount={toAmount}
+        />
+        <p>Konvertatsiya qilingan holati</p>
       </div>
     </div>
-  );
-}
+    </div>
+  ),
+  }
+
 
 export default Conversions;
