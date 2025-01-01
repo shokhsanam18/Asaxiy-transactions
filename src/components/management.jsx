@@ -37,12 +37,12 @@ const TransactionApp = () => {
 
   return (
     <div className="app-container">
-      <h1>Tranzaksiya qo'shish</h1>
+      <h1 className="dilfuza-h1">Tranzaksiya qo'shish</h1>
       <button className="open-modal-btn" onClick={() => setModalVisible(true)}>
         Tranzaksiya qo'shish
       </button>
       {modalVisible && (
-        <div className="modal">
+        <div className="dilfuza-modal">
           <div className="modal-content">
             <span className="close-btn" onClick={() => setModalVisible(false)}>
               &times;
@@ -80,50 +80,54 @@ const TransactionApp = () => {
         </div>
       )}
 
-      <div className="filters">
-        <h2>Filtrlar</h2>
-        <input
-          type="date"
-          value={filterDate}
-          onChange={(e) => setFilterDate(e.target.value)}
-          placeholder="Filtrlash uchun sana"
-        />
-        <select
-          value={filterCategory}
-          onChange={(e) => setFilterCategory(e.target.value)}
-        >
-          <option value="">Filtrlash uchun kategoriya</option>
-          <option value="Food">Ovqat</option>
-          <option value="Transport">Transport</option>
-          <option value="Clothes">Kiyim</option>
-          <option value="Others">Boshqalar</option>
-        </select>
-      </div>
-
-      {filteredTransactions.length > 0 && (
-        <table className="transaction-table">
-          <thead>
-            <tr>
-              <th>Miqdori</th>
-              <th>Kategoriya</th>
-              <th>Turi</th>
-              <th>Sanasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredTransactions.map((transaction, index) => (
-              <tr key={index}>
-                <td>{transaction.amount}</td>
-                <td>{transaction.category}</td>
-                <td>{transaction.type}</td>
-                <td>{transaction.date}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+      <button onClick={buttonAddTransaction}>Qo'shish</button>
     </div>
   );
 };
+
+<div className="filters">
+  <h2>Filtrlar</h2>
+  <input
+    type="date"
+    value={filterDate}
+    onChange={(e) => setFilterDate(e.target.value)}
+    placeholder="Filtrlash uchun sana"
+  />
+  <select
+    value={filterCategory}
+    onChange={(e) => setFilterCategory(e.target.value)}
+  >
+    <option value="">Filtrlash uchun kategoriya</option>
+    <option value="Food">Ovqat</option>
+    <option value="Transport">Transport</option>
+    <option value="Clothes">Kiyim</option>
+    <option value="Others">Boshqalar</option>
+  </select>
+</div>;
+
+{
+  filteredTransactions.length > 0 && (
+    <table className="transaction-table">
+      <thead>
+        <tr>
+          <th>Miqdori</th>
+          <th>Kategoriya</th>
+          <th>Turi</th>
+          <th>Sanasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredTransactions.map((transaction, index) => (
+          <tr key={index}>
+            <td>{transaction.amount}</td>
+            <td>{transaction.category}</td>
+            <td>{transaction.type}</td>
+            <td>{transaction.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 
 export default TransactionApp;

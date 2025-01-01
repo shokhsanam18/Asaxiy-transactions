@@ -8,7 +8,7 @@ border-radius: 8px;
 box-sizing: border-box;
 }
 
-h1{
+.dilfuza-h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
@@ -32,7 +32,7 @@ h1{
 .open-modal-btn:hover {
     background-color: #4caf50;
 }
-.modal {
+.dilfuza-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -81,9 +81,9 @@ button {
     cursor: pointer;
     border: none;
 }
-button:hover {
+/* button:hover {
     background-color: #45a049;
-}
+} */
 .filters {
     margin-bottom: 20px;
 }

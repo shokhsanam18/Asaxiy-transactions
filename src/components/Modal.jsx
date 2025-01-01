@@ -4,7 +4,7 @@ const Modal = ({isOpen}) => {
     const openfunc = () => setIsOpen(!isOpen)
    
   return (
-    <div className={`absolute flex items-center justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
+    <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
         <form className="w-[90vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={openfunc}>
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
@@ -17,7 +17,7 @@ const Modal = ({isOpen}) => {
             />
             <label
               htmlFor="number"
-              className="absolute left-2 top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white border-slate-400 peer-focus:text-xs px-1"
+              className="absolute left-2 top-4 transition-all peer-focus:top-1 peer-focus:text-black bg-white border-slate-400 peer-focus:text-xs px-1"
             >
               Tranzaksiya Miqdori
             </label>
