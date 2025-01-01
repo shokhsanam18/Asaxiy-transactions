@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="NavBar sticky top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap flex-shrink">
+      <nav className="NavBar bg-white sticky z-20 top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap flex-shrink">
         <div className="flex items-center justify-center">
           <button
             className="SideBarMenu w-16 h-11 bg-neutral-100 border-none rounded-md flex justify-center items-center fixed left-96 hover:bg-gray-100"
@@ -40,7 +40,7 @@ const Navbar = () => {
       </nav>
 
       {side ? (
-        <div className="SideBar h-screen w-[320px] fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col translate-x-0 transition-all">
+        <div className="SideBar h-screen w-[320px] z-30 fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col translate-x-0 transition-all">
           <div className="logo">
             <a href="/">
               <img src={Logo} alt="" />
@@ -73,7 +73,7 @@ const Navbar = () => {
           </ul>
         </div>
       ) : (
-        <div className="SideBar h-screen w-[320px] fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col -translate-x-full transition-all">
+        <div className="SideBar h-screen w-[320px] z-30 fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col -translate-x-full transition-all">
           <div className="logo">
             <a href="/">
               <img src={Logo} alt="" />

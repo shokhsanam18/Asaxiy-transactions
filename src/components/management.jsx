@@ -35,11 +35,11 @@ const TransactionApp = () => {
 
     return(
         <div className="app-container">
-            <h1>Tranzaksiya qo'shish</h1>
+            <h1 className="dilfuza-h1">Tranzaksiya qo'shish</h1>
             <button className="open-modal-btn" onClick={() => setModalVisible(true)}>Tranzaksiya qo'shish</button>
             {
                 modalVisible && (
-                <div className="modal">
+                <div className="dilfuza-modal">
                     <div className="modal-content">
                         <span className="close-btn" onClick={() => setModalVisible(false)}>&times;</span>
                         <h2>Tranzaksiya qo'shish</h2>
