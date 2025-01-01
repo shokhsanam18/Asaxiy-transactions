@@ -1,14 +1,20 @@
-// import './App.css'
-import TransactionApp from './components/management'
-import { useState } from 'react'
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/nav";
+import Transactions from "./components/Transactions";
+import Conversions from "./components/conversions";
+import Analytics from "./components/analytics";
 
 function App() {
-
   return (
     <>
-    <TransactionApp />
+      <Navbar />
+      <Routes>
+        <Route path="/tahlil" element={<Analytics />} />
+        <Route path="/conversions" element={<Conversions />} />
+        <Route path="/transactions" element={<Transactions />} />
+      </Routes>
     </>
-  )
+  );
 }
 
 export default App;
