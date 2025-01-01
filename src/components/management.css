@@ -135,7 +135,7 @@ input, select, button {
 }}
 
 @media (max-width: 480px) {
-h1 {
+.dilfuza-h1 {
     font-size: 20px;
 }
   

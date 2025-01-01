@@ -1,8 +1,10 @@
 import React from 'react'
+import { useModalStore} from '../Store'
 
-const Modal = ({isOpen}) => {
-    const openfunc = () => setIsOpen(!isOpen)
-   
+const Modal = () => {
+    // const openfunc = () => setIsOpen(!isOpen)
+  //  const transactions = useStore(Store => Store.transactions)
+  const {isOpen, openfunc} = useModalStore()
   return (
     <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
         <form className="w-[90vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={openfunc}>
@@ -41,7 +43,7 @@ const Modal = ({isOpen}) => {
                 name="type"
                 id="income"
                 value="income"
-                checked
+                // checked
               />
               <label htmlFor="income">Daromat</label>
               <input type="radio" name="type" id="expense" value="expense" />
