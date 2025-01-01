@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
-import TransactionApp from "./management"
+import TransactionApp from "./management";
 
 const Transactions = () => {
-
-    const [isOpen, setIsOpen] = useState(false)
-    const openfunc = () => setIsOpen(!isOpen)
-
-
+  const [isOpen, setIsOpen] = useState(false);
+  const openfunc = () => setIsOpen(!isOpen);
 
   return (
     <section className="w-full">
@@ -15,13 +12,12 @@ const Transactions = () => {
         <div className="flex w-full justify-between mb-5">
           <h2 className="text-3xl text-black font-normal">Tranzaksyalar</h2>
           <div>
-
-          <button 
-          className="bg-blue-600 py-2 outline-none uppercase font-semibold transition ease-in-out duration-300 hover:shadow-xl text-sm px-5 text-white rounded-lg"
-          onClick={openfunc}
-          >
-            Transaksya qo'shish
-          </button>
+            <button
+              className="bg-blue-600 py-2 outline-none uppercase font-semibold transition ease-in-out duration-300 hover:shadow-xl text-sm px-5 text-white rounded-lg"
+              onClick={openfunc}
+            >
+              Transaksya qo'shish
+            </button>
           </div>
         </div>
         <div>
@@ -37,8 +33,8 @@ const Transactions = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={isOpen}/>
-      <TransactionApp/>
+      <Modal isOpen={isOpen} />
+      <TransactionApp />
     </section>
   );
 };
