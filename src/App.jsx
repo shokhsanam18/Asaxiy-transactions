@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/nav";
-import Transactions from "./components/transactions";
+import Transactions from "./components/Transactions";
 import Conversions from "./components/conversions";
 import Analytics from "./components/analytics";
 
