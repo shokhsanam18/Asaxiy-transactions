@@ -1,10 +1,16 @@
 // import { useState } from 'react';
 import  { create } from 'zustand';
 
-const Store = (set) => ({
-    transactions: [{amount: '100', category: 'Food', type: 'expense', date: ''}]
-})
-export const useStore = create(Store)
+// const Store = (set) => ({
+//     transactions: [{amount: '100', category: 'Food', type: 'expense', date: ''}]
+// })
+// export const useStore = create(Store)
+export const useStore = create((set) => ({
+    transactions: [],
+    addTransaction: (newTransaction) => 
+      set((state) => ({ transactions: [...state.transactions, newTransaction] })),
+  }));
+
 // const [isOpen, setIsOpen] = useState(false)
 // const openfunc = () => setIsOpen(!isOpen);
 

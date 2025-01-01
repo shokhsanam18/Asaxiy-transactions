@@ -1,12 +1,13 @@
 import React from "react";
 import Modal from "./Modal";
 import TransactionApp from "./management";
-import { useModalStore } from "../Store";
+import { useModalStore} from "../Store";
 
 const Transactions = () => {
   // const [isOpen, setIsOpen] = useState(false);
   // const openfunc = () => setIsOpen(!isOpen);
   const {openfunc} = useModalStore()
+
   return (
     <section className="w-full">
       <div className="flex flex-col py-3 px-2 gap-4 w-full">
