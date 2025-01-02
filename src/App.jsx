@@ -7,13 +7,6 @@ import Analytics from "./components/analytics";
 function App() {
   return (
     <>
-      {/* <Layout />
-      <Routes>
-        <Route path="/tahlil" element={<Analytics />} />
-        <Route path="/conversions" element={<Conversions />} />
-        <Route path="/transactions" element={<Transactions />} />
-      </Routes> */}
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Analytics />} />
