@@ -17,9 +17,9 @@ const TransactionApp = () => {
   });
 
   return (
-    <div className="max-w-full mx-auto p-6 bg-gray-100 rounded-xl px-5 sm:px-10 lg:px-20">
+    <div className="max-w-full mx-auto p-6 bg-gray-50 rounded-xl px-5 sm:px-10 lg:px-20">
 
-<div className="mt-8">
+        <div>
                 <div className="flex flex-col sm:flex-row gap-5 mb-4">
                     <input 
                         type="date" 
@@ -43,8 +43,8 @@ const TransactionApp = () => {
                 </div>
             </div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full border-collapse mt-6">
+            <div>
+                <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-gray-200 text-left">
                             <th className="px-4 py-3">Miqdori</th>
