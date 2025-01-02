@@ -13,11 +13,11 @@ export const useStore = create((set) => ({
 
 
 export const useModalStore = create((set) =>({
-    isOpen: false, 
+    isOpen: true, 
     openfunc: () => set((state) => ({isOpen: !state.isOpen}))
 }))
 
   export const useSidebarStore = create((set) => ({
-    side:true,
+    side:false,
     SideBarShow: () => set((state) => ({side: !state.side}))
   }))

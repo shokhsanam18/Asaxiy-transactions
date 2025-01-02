@@ -17,8 +17,8 @@ const Modal = () => {
   
 
   return (
-    <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
-        <form className="w-[90vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={handleSubmit(submitted)}>
+    <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm  ${isOpen? 'auto': 'hidden'}`}>
+        <form className="w-[80vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={handleSubmit(submitted)}>
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
             <input
@@ -50,7 +50,9 @@ const Modal = () => {
           </select>
           <div className="flex gap-3 items-center">
             <h4 className="text-lg font-normal">Tranzaksiya turi:</h4>
-            <div className="flex gap-1">
+            <div className="flex gap-1 flex-col sm:flex-row">
+              <div className="flex gap-1">
+
               <input
                 type="radio"
                 {...register("type")}
@@ -59,8 +61,12 @@ const Modal = () => {
                 checked
               />
               <label htmlFor="income">Daromat</label>
+              </div>
+              <div className="flex gap-1">
+
               <input type="radio" {...register("type")} id="expense" value="expense" />
               <label htmlFor="expense">Xarajat</label>
+              </div>
             </div>
           </div>
           <div className="relative">

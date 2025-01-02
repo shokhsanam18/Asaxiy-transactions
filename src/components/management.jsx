@@ -17,10 +17,9 @@ const TransactionApp = () => {
   });
 
   return (
-    <div className="max-w-full mx-auto p-6 bg-gray-50 rounded-xl px-5 sm:px-10 lg:px-20">
+    <div className="max-w-full p-3 sm:p-6 bg-gray-50 rounded-xl px-5 sm:px-10 lg:px-20">
 
-        <div>
-                <div className="flex flex-col sm:flex-row gap-5 mb-4">
+        <div className="flex gap-5 mb-4">
                     <input 
                         type="date" 
                         value={filterDate} 
@@ -40,37 +39,34 @@ const TransactionApp = () => {
                         <option value="bills">Hisoblar</option>
                         <option value="other">Boshqa</option>
                     </select>
-                </div>
-            </div>
+        </div>
 
-            <div>
-                <table className="w-full border-collapse">
+        <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-gray-200 text-left">
-                            <th className="px-4 py-3">Miqdori</th>
-                            <th className="px-4 py-3">Kategoriya</th>
-                            <th className="px-4 py-3">Turi</th>
-                            <th className="px-4 py-3">Sanasi</th>
+                            <th className="sm:px-4 py-3 px-1">Miqdori</th>
+                            <th className="sm:px-4 py-3 px-1">Kategoriya</th>
+                            <th className="sm:px-4 py-3 px-1">Turi</th>
+                            <th className="sm:px-4 py-3 px-1">Sanasi</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredTransactions.length > 0 ? (
                             filteredTransactions.map((transaction, index) => (
                                 <tr key={index} className="hover:bg-gray-100">
-                                    <td className="px-4 py-3">{transaction.amount}</td>
-                                    <td className="px-4 py-3">{transaction.category}</td>
-                                    <td className="px-4 py-3">{transaction.type}</td>
-                                    <td className="px-4 py-3">{transaction.date}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.amount}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.category}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.type}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.date}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="4" className="px-4 py-3 text-center">Ma'lumotlar mavjud emas</td>
+                                <td colSpan="4" className="sm:px-4 py-3 px-1 text-center">Ma'lumotlar mavjud emas</td>
                             </tr>
                         )}
                     </tbody>
-                </table>
-            </div>
+        </table>
     </div>
   );
 };
