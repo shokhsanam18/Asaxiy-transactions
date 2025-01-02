@@ -18,6 +18,6 @@ export const useModalStore = create((set) =>({
 }))
 
   export const useSidebarStore = create((set) => ({
-    side:false,
+    side:true,
     SideBarShow: () => set((state) => ({side: !state.side}))
   }))
