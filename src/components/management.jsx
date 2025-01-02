@@ -2,30 +2,10 @@ import React, { useState } from "react";
 import './management.css';
 
 const TransactionApp = () => {
-    const [amount, setAmount] = useState('');
-    const [category, setCategory] = useState('');
-    const [type, setType] = useState('');
-    const [date, setDate] = useState('');
-    const [transactions, setTransactions] = useState([]);
-    const [filter, setFilter] = useState('');
-    const [filterDate, setFilterDate] = useState('');
-    const [filterCategory, setFilterCategory] = useState('');
-    const [modalVisible, setModalVisible] = useState(false);
-
-    const buttonAddTransaction = () => {
-        const newTransaction = {
-            amount,
-            type,
-            date,
-            category,
-        };
-        setTransactions([...transactions, newTransaction]);
-        setAmount('');
-        setCategory('');
-        setType('');
-        setDate('');
-        setModalVisible(false);
-    };
+    const {transactions} = useStore()
+//   const [filter, setFilter] = useState("");
+  const [filterDate, setFilterDate] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
 
   const filteredTransactions = transactions.filter((transaction) => {
     const dataMatch = filterDate ? transaction.date === filterDate : true;
