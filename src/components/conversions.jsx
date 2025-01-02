@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Currency.css";
+// import "./Currency.css";
 import CurrencyRow from "./currencyRow";
 
 const BASE_URL = "https://api.exchangerate-api.com/v4/latest/USD";
@@ -28,7 +28,12 @@ function Conversions() {
       .then((res) => res.json())
       .then((data) => {
         const firstCurrency = Object.keys(data.rates)[0];
-        setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
+        setCurrencyOptions([
+          data.base,
+          ...Object.keys(data.rates).filter(
+            (currency) => currency !== data.base
+          ),
+        ]);
         setFromCurrency(data.base);
         setToCurrency(firstCurrency);
         setExchangeRate(data.rates[firstCurrency]);
@@ -70,10 +75,10 @@ function Conversions() {
   }
 
   return (
-    <div className="rushana-conversionMain">
-      <h2 className="converter-title">Valyuta kursi</h2>
-      {error && <div className="rushana-error-message">{error}</div>}
-      <div>
+    <div className="w-full h-full flex justify-center items-center flex-col p-8 shadow-md">
+      <h2 className="text-xl font-semibold">Valyuta kursi</h2>
+      {error && <div className="text-red-500 mt-4">{error}</div>}
+      <div className="w-full max-w-md mt-6">
         <CurrencyRow
           currencyOptions={currencyOptions}
           selectedCurrency={fromCurrency}
@@ -82,8 +87,8 @@ function Conversions() {
           amount={fromAmount}
         />
       </div>
-      <div className="rushana-equals">{result}</div>
-      <div>
+      <div className="text-center text-xl mt-4">{result}</div>
+      <div className="w-full max-w-md mt-6">
         <CurrencyRow
           currencyOptions={currencyOptions}
           selectedCurrency={toCurrency}
@@ -91,10 +96,11 @@ function Conversions() {
           onChangeAmount={handleToAmountChange}
           amount={toAmount}
         />
-        <p>Konvertatsiya qilingan holati</p>
+        <p className="text-xl text-center mt-4">Konvertatsiya qilingan holati</p>
       </div>
     </div>
   );
 }
+
 
 export default Conversions;
