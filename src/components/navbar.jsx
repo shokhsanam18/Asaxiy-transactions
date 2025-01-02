@@ -5,9 +5,9 @@ import Photo from "../assets/people19.png";
 import { useSidebarStore } from "../Store";
 
 export const Nav = () => {
-  const {side, SideBarShow } = useSidebarStore();
+  const { SideBarShow } = useSidebarStore();
   return (
-    <nav className={`NavBar bg-white sticky top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap  ${side ? 'w-[90vw]' :  'w-screen'}`}>
+    <nav className="NavBar bg-white sticky top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap ">
       <div className="flex items-center justify-center">
         <button
           className="SideBarMenu w-16 h-11 bg-neutral-100 border-none rounded-md flex justify-center items-center hover:bg-gray-100"
