@@ -25,11 +25,11 @@ export default function CurrencyRow(props) {
   );
 
   return (
-    <div className="component">
-      <div className="currencyInput">
+    <div className="rushana-component">
+      <div className="rushana-currencyInput">
         <input
           type="text"
-          className="input"
+          className="rushana-input"
           inputMode="numeric"
           value={amount}
           onChange={(e) => {
@@ -42,14 +42,14 @@ export default function CurrencyRow(props) {
         <p>Miqdorni kiriting</p>
       </div>
 
-      <button className="select-button" onClick={toggleModal}>
+      <button className="rushana-select-button" onClick={toggleModal}>
         {selectedCurrency || "Select Currency"}
       </button>
 
       {isModalOpen && (
-        <div className="modal-overlay" onClick={toggleModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="search-bar">
+        <div className="rushana-modal-overlay" onClick={toggleModal}>
+          <div className="rushana-modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="rushana-search-bar">
               <labe>Search</labe>
               <input
                 placeholder="Search"
@@ -57,17 +57,17 @@ export default function CurrencyRow(props) {
                 type="search"
                 name="search-form"
                 id="search-form"
-                className="search-input"
+                className="rushana-search-input"
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <h3>Valyutalar</h3>
             </div>
-            <div className="modal-options">
+            <div className="rushana-modal-options">
               {}
               {filterOptions.map((option) => (
                 <button
                   key={option}
-                  className="currency-option"
+                  className="rushana-currency-option"
                   onClick={() => handleOptionClick(option)}
                 >
                   {option}

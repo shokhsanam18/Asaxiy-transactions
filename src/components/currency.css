@@ -1,4 +1,4 @@
-.modal-overlay {
+.rushana-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 
-.modal-content {
+.rushana-modal-content {
   margin: 15px;
   background: #fff;
   border-radius: 8px;
@@ -27,19 +27,19 @@
   flex-direction: column;
 }
 
-.search-bar {
+.rushana-search-bar {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.search-bar input {
+.rushana-search-bar input {
   border: 2px solid black;
   height: 30px;
   border-radius: 5px;
 }
 
-.modal-options {
+.rushana-modal-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
@@ -48,11 +48,11 @@
   padding-right: 10px;
 }
 
-.search-bar h3 {
+.rushana-search-bar h3 {
   color: gray;
 }
 
-.currency-option {
+.rushana-currency-option {
   background-color: white;
   border: 1.2px solid #ccc;
   border-radius: 5px;
@@ -64,11 +64,11 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.currency-option:hover {
+.rushana-currency-option:hover {
   background-color: #ddd;
 }
 
-.select-button {
+.rushana-select-button {
   font-weight: bold;
   background-color: white;
   color: #007bff;
@@ -78,17 +78,17 @@
   cursor: pointer;
 }
 
-.select-button:hover {
+/* .rushana-select-button:hover {
   border: 1px solid #0056b3;
-}
+} */
 
-.component {
+.rushana-component {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-.currencyInput {
+.rushana-currencyInput {
   background-color: #007bff;
   padding: 10px;
   border-radius: 8px;
@@ -97,7 +97,7 @@
   margin-bottom: 20px;
 }
 
-.input {
+.rushana-input {
   border: none;
   color: white;
   width: 100%;
@@ -107,13 +107,13 @@
   background-color: #007bff;
 }
 
-.currencyInput {
+.rushana-currencyInput {
   width: 80vw;
   color: white;
   background-color: #007bff;
 }
 
-.conversionMain {
+.rushana-conversionMain {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   width: 100%;

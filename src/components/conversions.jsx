@@ -70,9 +70,9 @@ function Conversions() {
   }
 
   return (
-    <div className="conversionMain">
+    <div className="rushana-conversionMain">
       <h2 className="converter-title">Valyuta kursi</h2>
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="rushana-error-message">{error}</div>}
       <div>
         <CurrencyRow
           currencyOptions={currencyOptions}
@@ -82,7 +82,7 @@ function Conversions() {
           amount={fromAmount}
         />
       </div>
-      <div className="equals">{result}</div>
+      <div className="rushana-equals">{result}</div>
       <div>
         <CurrencyRow
           currencyOptions={currencyOptions}
