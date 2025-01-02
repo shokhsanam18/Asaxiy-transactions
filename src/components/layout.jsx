@@ -10,7 +10,11 @@ import { Link } from "react-router-dom";
 import { useSidebarStore } from "../Store";
 
 const Navbar = () => {
-  const {side, SideBarShow} = useSidebarStore()
+  // const [side, setSideBar] = useState(true);
+
+  // const SideBarShow = () => setSideBar(!side);
+
+  const { side, SideBarShow } = useSidebarStore();
   return (
     <>
       <nav className="NavBar bg-white sticky z-20 top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap flex-shrink">
@@ -48,7 +52,7 @@ const Navbar = () => {
             <li className=" w-[260px] ">
               <Link to="/tahlil">
                 <button className="font-bold  bg-blue-600 text-white rounded-md flex items-center justify-start gap-3 p-3 text-xs uppercase w-full hover:shadow-xl">
-                  <ChartPie className="inline-block" />
+                  <ChartPie />
                   Tahlil
                 </button>
               </Link>
