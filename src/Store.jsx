@@ -1,15 +1,21 @@
-// import { useState } from 'react';
 import  { create } from 'zustand';
-
-// const Store = (set) => ({
-//     transactions: [{amount: '100', category: 'Food', type: 'expense', date: ''}]
-// })
-// export const useStore = create(Store)
-export const useStore = create((set) => ({
-    transactions: [],
-    addTransaction: (newTransaction) => 
-      set((state) => ({ transactions: [...state.transactions, newTransaction] })),
-  }));
+import { createJSONStorage, persist } from 'zustand/middleware';
+// export const useStore = create((set) => ({
+//     transactions: [],
+//     addTransaction: (newTransaction) => 
+//       set((state) => ({ transactions: [...state.transactions, newTransaction] })),
+//   }));
+export const useStore = create(persist((set) => ({
+        transactions: [],
+        addTransaction: (newTransaction) => 
+          set((state) => ({ transactions: [...state.transactions, newTransaction] })),
+      }),
+      {
+        name: 'transactions-storage', 
+        storage: createJSONStorage(() => localStorage)
+      },
+),
+);
 
 
 export const useModalStore = create((set) =>({
