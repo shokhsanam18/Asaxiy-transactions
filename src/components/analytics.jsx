@@ -2,8 +2,8 @@ import React, { useState, useEffect, useMemo } from "react";
 // import useStore from "./components/store";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from "chart.js";
-import DecreaseGif from "./decrease.gif";
-import IncreaseGif from "./increase.gif";
+import DecreaseGif from "../assets/decrease.gif";
+import IncreaseGif from "../assets/increase.gif";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
 
