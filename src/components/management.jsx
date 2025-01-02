@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './management.css';
+import { useStore } from "../Store";
 
 const TransactionApp = () => {
     const {transactions} = useStore()
