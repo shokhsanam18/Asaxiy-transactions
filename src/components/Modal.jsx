@@ -17,7 +17,7 @@ const Modal = () => {
   
 
   return (
-    <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm  ${isOpen? 'auto': 'hidden'}`}>
+    <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm  ${isOpen? 'block': 'hidden'}`}>
         <form className="w-[80vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={handleSubmit(submitted)}>
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
@@ -27,13 +27,13 @@ const Modal = () => {
                 required: "enter number",
               })}
               id="number"
-              className={`peer  ${errors.amount ? 'outline-red-500' : "border-slate-400"} border-[1px] w-full rounded py-2 px-3 focus:border-2`}
+              placeholder=" "
+              className={`peer z-20  ${errors.amount ? 'outline-red-500' : "border-slate-400"} border-[1px] w-full rounded py-2 px-3 focus:border-2`}
             />
-
             <label
               htmlFor="number"
-              className={`absolute left-2 top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white ${errors.amount ? 'peer-focus:text-red-500' : "peer-focus:text-black"} border-slate-400 peer-focus:text-xs px-1`}
-            >
+              className={`absolute z-10 left-2 top-2 peer-not-placeholder-shown:-top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white ${errors.amount ? 'peer-focus:text-red-500' : "peer-focus:text-black"} border-slate-400 peer-focus:text-xs px-1`}
+              >
               Tranzaksiya Miqdori
             </label>
           </div>
@@ -87,7 +87,7 @@ const Modal = () => {
             Transaksya qo'shish
           </button>
         </form>
-        <div className={`absolute top-0 w-screen left-0 h-screen`} onClick={openfunc}></div>
+        <div className={`absolute top-0 w-screen left-0 h-screen bg-black opacity-30`} onClick={openfunc}></div>
     </div>
   )
 }

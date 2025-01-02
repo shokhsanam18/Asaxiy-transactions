@@ -1,11 +1,19 @@
 import React from 'react'
-import { useModalStore } from '../Store'
+import { useModalStore, useStore } from '../Store'
 
 const State = () => {
 
-const {openfunc} = useModalStore()
-// console.log(localStorage);
+  const {openfunc} = useModalStore()
+  
+  const {transactions} = useStore()
+    
+    const filtering = (typeName) => transactions
+    .filter((transaction) => transaction.type === typeName)
+    .reduce((sum, transaction) => sum + Number(transaction.amount), 0)
 
+    const income = filtering('income')
+    const expense = filtering('expense')
+    const total = income - expense
   return (
     <div className="flex flex-col py-3 px-2 gap-4 w-full">
     <div className="flex w-full justify-between mb-5">
@@ -19,14 +27,14 @@ const {openfunc} = useModalStore()
     </div>
     <div>
       <h3 className="text-2xl text-black font-normal">Balans:</h3>
-      <h3 className="text-3xl text-red-500 font-bold">2000</h3>
+      <h3 className={`text-3xl ${total > 0 ? 'text-lime-600' : 'text-red-500' } font-bold`}>{total}</h3>
     </div>
     <div>
       <h3 className="text-2xl text-black font-normal">Umumiy:</h3>
       <div className="flex gap-4">
-        <h3 className="text-base text-lime-600 font-bold">+ 2000 kirim</h3>
+        <h3 className="text-base text-lime-600 font-bold">+ {income} kirim</h3>
         <h3 className="text-base text-black font-bold">/</h3>
-        <h3 className="text-base text-red-500 font-bold">- 2000 chiqim</h3>
+        <h3 className="text-base text-red-500 font-bold"> - {expense} chiqim</h3>
       </div>
     </div>
   </div>

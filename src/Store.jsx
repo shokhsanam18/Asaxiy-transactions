@@ -1,11 +1,5 @@
-// import { useState } from 'react';
 import  { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-
-// const Store = (set) => ({
-//     transactions: [{amount: '100', category: 'Food', type: 'expense', date: ''}]
-// })
-// export const useStore = create(Store)
 // export const useStore = create((set) => ({
 //     transactions: [],
 //     addTransaction: (newTransaction) => 

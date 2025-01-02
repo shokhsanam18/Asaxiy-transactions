@@ -32,7 +32,7 @@ const TransactionApp = () => {
                         onChange={(e) => setFilterCategory(e.target.value)} 
                         className="w-full sm:w-1/2 p-3 border border-gray-300 rounded-md"
                     >
-                        <option value="">Filtrlash uchun kategoriya</option>
+                        <option value="">Barchasi</option>
                         <option value="Food">Oziq-ovqat</option>
                         <option value="Entertainment">Ko'ngilochar</option>
                         <option value="transport">Transport</option>

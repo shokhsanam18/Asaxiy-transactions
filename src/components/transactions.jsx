@@ -7,7 +7,6 @@ import State from "./state";
 const Transactions = () => {
   // const [isOpen, setIsOpen] = useState(false);
   // const openfunc = () => setIsOpen(!isOpen);
-  const {transactions} = useStore()
 
   return (
     <section className="w-full">
