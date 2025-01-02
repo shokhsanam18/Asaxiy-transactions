@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useModalStore, useStore} from '../Store'
 import { useForm } from 'react-hook-form'
 
 const Modal = () => {
   //  const transactions = useStore(Store => Store.transactions)
   const {isOpen, openfunc} = useModalStore()
-  // const {transactions, addTransaction} = useStore()
+  const {addTransaction} = useStore()
   const {handleSubmit, register, reset} = useForm()
   const submitted = (data) => {
-    // event.preventDefault();
-    // Form content 
-    // addTransaction(newTransaction); 
-    console.log(data);
+    addTransaction(data); 
     reset()
-    // openfunc()
+    openfunc()
   };
 
   return (
