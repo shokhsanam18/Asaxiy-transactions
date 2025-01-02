@@ -20,7 +20,6 @@ const TransactionApp = () => {
     <div className="max-w-full mx-auto p-6 bg-gray-100 rounded-xl px-5 sm:px-10 lg:px-20">
 
 <div className="mt-8">
-                <h2 className="text-xl font-semibold mb-4">Filtrlar</h2>
                 <div className="flex flex-col sm:flex-row gap-5 mb-4">
                     <input 
                         type="date" 

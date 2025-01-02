@@ -13,6 +13,7 @@ const Modal = () => {
     reset()
     openfunc()
   };
+  
 
   return (
     <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
@@ -20,7 +21,6 @@ const Modal = () => {
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
             <input
-            ref={inputRef}
               type="number"
               {...register("amount", {
                 required: "enter number",
