@@ -41,8 +41,8 @@ const Modal = () => {
             className=" border-2 rounded py-2 px-3"
             id="category"
           >
-            <option value="food">Oziq-ovqat</option>
-            <option value="entertainment">Qo'ngilochlar</option>
+            <option value="Food">Oziq-ovqat</option>
+            <option value="Entertainment">Ko'ngilochar</option>
             <option value="transport">Transport</option>
             <option value="bills">Hisoblar</option>
             <option value="other">Boshqa</option>

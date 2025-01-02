@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './management.css';
+// import './management.css';
 import { useStore } from "../Store";
 
 const TransactionApp = () => {
@@ -35,10 +35,11 @@ const TransactionApp = () => {
                         className="w-full sm:w-1/2 p-3 border border-gray-300 rounded-md"
                     >
                         <option value="">Filtrlash uchun kategoriya</option>
-                        <option value="Food">Ovqat</option>
-                        <option value="Transport">Transport</option>
-                        <option value="Clothes">Kiyim</option>
-                        <option value="Others">Boshqalar</option>
+                        <option value="Food">Oziq-ovqat</option>
+                        <option value="Entertainment">Ko'ngilochar</option>
+                        <option value="transport">Transport</option>
+                        <option value="bills">Hisoblar</option>
+                        <option value="other">Boshqa</option>
                     </select>
                 </div>
             </div>
