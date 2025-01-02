@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "./Modal";
 import TransactionApp from "./management";
+import { useModalStore} from "../Store";
 
 const Transactions = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const openfunc = () => setIsOpen(!isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const openfunc = () => setIsOpen(!isOpen);
+  const {openfunc} = useModalStore()
 
   return (
     <section className="w-full">
@@ -33,7 +35,7 @@ const Transactions = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={isOpen} />
+      <Modal/>
       <TransactionApp />
     </section>
   );

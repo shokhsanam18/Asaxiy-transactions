@@ -7,12 +7,14 @@ import { CircleDollarSign } from "lucide-react";
 import Photo from "../assets/people19.png";
 import Logo from "../assets/asaxiy-logo.svg";
 import { Link } from "react-router-dom";
+import { useSidebarStore } from "../Store";
 
 const Navbar = () => {
-  const [side, setSideBar] = useState(true);
+  // const [side, setSideBar] = useState(true);
 
-  const SideBarShow = () => setSideBar(!side);
-
+  // const SideBarShow = () => setSideBar(!side);
+  
+  const {side, SideBarShow} = useSidebarStore()
   return (
     <>
       <nav className="NavBar bg-white sticky z-20 top-0 flex shadow-sm p-5 h-[90px] justify-between items-center flex-wrap flex-shrink">
