@@ -1,39 +1,42 @@
 import React from 'react'
 import { useModalStore, useStore} from '../Store'
+import { useForm } from 'react-hook-form'
 
 const Modal = () => {
-    // const openfunc = () => setIsOpen(!isOpen)
   //  const transactions = useStore(Store => Store.transactions)
   const {isOpen, openfunc} = useModalStore()
   // const {transactions, addTransaction} = useStore()
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const {handleSubmit, register, reset} = useForm()
+  const submitted = (data) => {
+    // event.preventDefault();
     // Form content 
     // addTransaction(newTransaction); 
-    openfunc()
-    // console.log(transactions);
+    console.log(data);
+    reset()
+    // openfunc()
   };
+
   return (
     <div className={`absolute flex items-center z-40 justify-center top-0 left-0 w-screen drop-shadow-2xl h-screen backdrop-blur-sm ${isOpen? '': 'hidden'}`}>
-        <form className="w-[90vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={handleSubmit}>
+        <form className="w-[90vw] sm:w-[75vw] md:w-[60vw]  flex flex-col text-slate-500 p-7 rounded-md gap-4 bg-white drop-shadow-2xl z-20" onSubmit={handleSubmit(submitted)}>
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
             <input
               type="number"
-              name="amount"
+              {...register("amount")}
               id="number"
               required
               className="peer border-slate-400 border-[1px] w-full rounded py-2 px-3 focus:border-2"
             />
             <label
               htmlFor="number"
-              className="absolute left-2 top-4 transition-all peer-focus:top-1 peer-focus:text-black bg-white border-slate-400 peer-focus:text-xs px-1"
+              className="absolute left-2 top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white border-slate-400 peer-focus:text-xs px-1"
             >
               Tranzaksiya Miqdori
             </label>
           </div>
           <select
-            name="category"
+            {...register("category")}
             className=" border-2 rounded py-2 px-3"
             id="category"
           >
@@ -48,20 +51,20 @@ const Modal = () => {
             <div className="flex gap-1">
               <input
                 type="radio"
-                name="type"
+                {...register("type")}
                 id="income"
                 value="income"
-                // checked
+                checked
               />
               <label htmlFor="income">Daromat</label>
-              <input type="radio" name="type" id="expense" value="expense" />
+              <input type="radio" {...register("type")} id="expense" value="expense" />
               <label htmlFor="expense">Xarajat</label>
             </div>
           </div>
           <div className="relative">
             <input
               type="date"
-              name="date"
+              {...register("date")}
               id="date"
               className="peer border-slate-400 border-[1px] w-full rounded py-2 px-3 focus:border-2"
             />

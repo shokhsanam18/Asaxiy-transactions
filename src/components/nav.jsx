@@ -10,10 +10,6 @@ import { Link } from "react-router-dom";
 import { useSidebarStore } from "../Store";
 
 const Navbar = () => {
-  // const [side, setSideBar] = useState(true);
-
-  // const SideBarShow = () => setSideBar(!side);
-  
   const {side, SideBarShow} = useSidebarStore()
   return (
     <>

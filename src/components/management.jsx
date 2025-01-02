@@ -36,25 +36,27 @@ const TransactionApp = () => {
   });
 
   return (
-    <div className="app-container">
+    <div className="dilfuza-app-container">
       <h1 className="dilfuza-h1">Tranzaksiya qo'shish</h1>
-      <button className="open-modal-btn" onClick={() => setModalVisible(true)}>
+      <button className="dilfuza-open-modal-btn dilfuza-btn" onClick={() => setModalVisible(true)}>
         Tranzaksiya qo'shish
       </button>
       {modalVisible && (
         <div className="dilfuza-modal">
           <div className="modal-content-dilfuza">
-            <span className="close-btn" onClick={() => setModalVisible(false)}>
+            <span className="dilfuza-close-btn" onClick={() => setModalVisible(false)}>
               &times;
             </span>
             <h2>Tranzaksiya qo'shish</h2>
             <input
+                className="dilfuza-input"
               type="number"
               placeholder="Tranzaksiya miqdori"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             />
             <select
+            className="dilfuza-select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -64,31 +66,33 @@ const TransactionApp = () => {
               <option value="Clothes">Kiyim</option>
               <option value="Others">Boshqalar</option>
             </select>
-            <select value={type} onChange={(e) => setType(e.target.value)}>
+            <select className="dilfuza-select" value={type} onChange={(e) => setType(e.target.value)}>
               <option value="">Tranzaksiya turi</option>
               <option value="Income">Income</option>
               <option value="Expense">Expense</option>
             </select>
             <input
+            className="dilfuza-input-date dilfuza-input"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
 
-            <button onClick={buttonAddTransaction}>Qo'shish</button>
+            <button className="dilfuza-btn" onClick={buttonAddTransaction}>Qo'shish</button>
           </div>
         </div>
       )}
 
-      <div className="filters">
+      <div className="dilfuza-filters">
         <h2>Filtrlar</h2>
         <input
-          type="date"
+          className="dilfuza-input-date dilfuza-input"
           value={filterDate}
           onChange={(e) => setFilterDate(e.target.value)}
           placeholder="Filtrlash uchun sana"
         />
         <select
+            className="dilfuza-select"
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
         >
@@ -101,7 +105,7 @@ const TransactionApp = () => {
       </div>
 
       {filteredTransactions.length > 0 && (
-        <table className="transaction-table">
+        <table className="transaction-table-dilfuza">
           <thead>
             <tr>
               <th>Miqdori</th>
