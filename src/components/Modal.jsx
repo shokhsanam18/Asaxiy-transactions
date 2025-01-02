@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 
 const Modal = () => {
   //  const transactions = useStore(Store => Store.transactions)
-  const {isOpen, inputRef, openfunc} = useModalStore()
+  const {isOpen, openfunc} = useModalStore()
   const {addTransaction} = useStore()
   const {handleSubmit, register, reset, formState: {errors}} = useForm()
   const submitted = (data) => {
@@ -13,6 +13,7 @@ const Modal = () => {
     reset()
     openfunc()
   };
+
   
 
   return (

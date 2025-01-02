@@ -1,12 +1,13 @@
 import React from "react";
 import Modal from "./Modal";
 import TransactionApp from "./management";
-import { useModalStore} from "../Store";
+import { useModalStore, useStore} from "../Store";
 
 const Transactions = () => {
   // const [isOpen, setIsOpen] = useState(false);
   // const openfunc = () => setIsOpen(!isOpen);
   const {openfunc} = useModalStore()
+  const {transactions} = useStore()
 
   return (
     <section className="w-full">
