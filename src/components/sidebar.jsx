@@ -9,7 +9,9 @@ import Logo from "../assets/asaxiy-logo.svg";
 export const Sidebar = () => {
   const { side } = useSidebarStore();
   return (
-  <div className={`SideBar z-10 h-screen w-[320px] fixed top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col ${side ? 'translate-x-0' :  '-translate-x-full'} transition-all`}>
+    <>
+      {side ? (
+        <div className="SideBar z-10 h-screen w-[320px] sticky top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col translate-x-0 transition-all">
           <div className="logo">
             <a href="/">
               <img src={Logo} alt="" />
@@ -41,5 +43,7 @@ export const Sidebar = () => {
             </li>
           </ul>
         </div>
+      ) : null}
+    </>
   );
 };
