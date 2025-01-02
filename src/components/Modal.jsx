@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useModalStore, useStore} from '../Store'
 import { useForm } from 'react-hook-form'
+// import { ErrorMessage } from '@hookform/error-message'
 
 const Modal = () => {
   //  const transactions = useStore(Store => Store.transactions)
-  const {isOpen, openfunc} = useModalStore()
+  const {isOpen, inputRef, openfunc} = useModalStore()
   const {addTransaction} = useStore()
-  const {handleSubmit, register, reset} = useForm()
+  const {handleSubmit, register, reset, formState: {errors}} = useForm()
   const submitted = (data) => {
     addTransaction(data); 
     reset()
@@ -19,15 +20,18 @@ const Modal = () => {
           <h2 className="text-xl capitalize font-bold">Transaksya qo'shish</h2>
           <div className="relative">
             <input
+            ref={inputRef}
               type="number"
-              {...register("amount")}
+              {...register("amount", {
+                required: "enter number",
+              })}
               id="number"
-              required
-              className="peer border-slate-400 border-[1px] w-full rounded py-2 px-3 focus:border-2"
+              className={`peer  ${errors.amount ? 'outline-red-500' : "border-slate-400"} border-[1px] w-full rounded py-2 px-3 focus:border-2`}
             />
+
             <label
               htmlFor="number"
-              className="absolute left-2 top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white border-slate-400 peer-focus:text-xs px-1"
+              className={`absolute left-2 top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white ${errors.amount ? 'peer-focus:text-red-500' : "peer-focus:text-black"} border-slate-400 peer-focus:text-xs px-1`}
             >
               Tranzaksiya Miqdori
             </label>
