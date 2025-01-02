@@ -4,6 +4,8 @@ import { useModalStore } from '../Store'
 const State = () => {
 
 const {openfunc} = useModalStore()
+// console.log(localStorage);
+
   return (
     <div className="flex flex-col py-3 px-2 gap-4 w-full">
     <div className="flex w-full justify-between mb-5">
