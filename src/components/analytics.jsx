@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import { useStore } from "../Store";
+import { useStore } from "../Store";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import DecreaseGif from "../assets/decrease.gif";
@@ -8,22 +8,22 @@ import IncreaseGif from "../assets/increase.gif";
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
 
 //dynamic transactions array
-//const transactions= useStore((state)=> state.transactions);
+const {transactions}= useStore();
 
 //static transaction array
-const transactions = [
-  { amount: "100", category: "Entertainment", type: "expense", date: "" },
-  { amount: "100", category: "Other", type: "expense", date: "" },
-  { amount: "100", category: "Food", type: "expense", date: "" },
-  { amount: "100", category: "Transport", type: "expense", date: "" },
-  { amount: "100", category: "Bills", type: "expense", date: "" },
-  { amount: "100", category: "Entertainment", type: "income", date: "" },
-  { amount: "100", category: "Other", type: "income", date: "" },
-  { amount: "100", category: "Food", type: "income", date: "" },
-  { amount: "100", category: "Transport", type: "income", date: "" },
-  { amount: "100", category: "Bills", type: "income", date: "" },
-  { amount: "100", category: "Bills", type: "income", date: "" },
-];
+// const transactions = [
+//   { amount: "100", category: "Entertainment", type: "expense", date: "" },
+//   { amount: "100", category: "Other", type: "expense", date: "" },
+//   { amount: "100", category: "Food", type: "expense", date: "" },
+//   { amount: "100", category: "Transport", type: "expense", date: "" },
+//   { amount: "100", category: "Bills", type: "expense", date: "" },
+//   { amount: "100", category: "Entertainment", type: "income", date: "" },
+//   { amount: "100", category: "Other", type: "income", date: "" },
+//   { amount: "100", category: "Food", type: "income", date: "" },
+//   { amount: "100", category: "Transport", type: "income", date: "" },
+//   { amount: "100", category: "Bills", type: "income", date: "" },
+//   { amount: "100", category: "Bills", type: "income", date: "" },
+// ];
 
 const categories = ["Food", "Entertainment", "Transport", "Bills", "Other"];
 const categoryColors = {
