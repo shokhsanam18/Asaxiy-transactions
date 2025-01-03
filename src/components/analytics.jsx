@@ -1,29 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import useStore from "./components/store";
+import { useStore } from "../Store";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import DecreaseGif from "../assets/decrease.gif";
 import IncreaseGif from "../assets/increase.gif";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
-
-//dynamic transactions array
-//const transactions= useStore((state)=> state.transactions);
-
-//static transaction array
-const transactions = [
-  { amount: "100", category: "Entertainment", type: "expense", date: "" },
-  { amount: "100", category: "Other", type: "expense", date: "" },
-  { amount: "100", category: "Food", type: "expense", date: "" },
-  { amount: "100", category: "Transport", type: "expense", date: "" },
-  { amount: "100", category: "Bills", type: "expense", date: "" },
-  { amount: "100", category: "Entertainment", type: "income", date: "" },
-  { amount: "100", category: "Other", type: "income", date: "" },
-  { amount: "100", category: "Food", type: "income", date: "" },
-  { amount: "100", category: "Transport", type: "income", date: "" },
-  { amount: "100", category: "Bills", type: "income", date: "" },
-  { amount: "100", category: "Bills", type: "income", date: "" },
-];
 
 const categories = ["Food", "Entertainment", "Transport", "Bills", "Other"];
 const categoryColors = {
@@ -35,6 +17,8 @@ const categoryColors = {
 };
 
 function Analytics() {
+  const { transactions } = useStore();
+
   const [balance, setBalance] = useState(0);
   const [categoryIncome, setCategoryIncome] = useState({
     Food: 0,
@@ -71,6 +55,13 @@ function Analytics() {
       let totalIncome = 0;
       let totalExpense = 0;
 
+      if (transactions.length === 0) {
+        setBalance(0);
+        setCategoryIncome(categoryIncome);
+        setCategoryExpense(categoryExpense);
+        return;
+      }
+
       transactions.forEach(({ amount, category, type }) => {
         const amountFloat = parseFloat(amount);
         if (type === "income") {
@@ -82,19 +73,17 @@ function Analytics() {
         }
       });
 
-      // total balance
       setBalance(totalIncome - totalExpense);
       setCategoryIncome(categoryIncome);
       setCategoryExpense(categoryExpense);
     };
 
     calculateTotals();
-  }, []);
+  }, [transactions]);
 
-  const lastTransaction = transactions[transactions.length - 1];
+  const lastTransaction = transactions[transactions.length - 1] || {};
   const gif = lastTransaction.type === "income" ? IncreaseGif : DecreaseGif;
 
-  // pie charts
   const incomeData = useMemo(
     () => ({
       datasets: [
@@ -123,7 +112,6 @@ function Analytics() {
     [categoryExpense]
   );
 
-  // category details
   const renderCategoryDetails = (category, categoryData) => (
     <div key={category} className="flex items-center mb-2">
       <div
@@ -140,15 +128,16 @@ function Analytics() {
     <div className="flex flex-col items-center justify-center gap-10 px-4 py-8 bg-white">
       <p className="text-5xl md:text-6xl">
         {balance}
-        <img
-          src={gif}
-          alt="gif"
-          className="w-16 sm:w-20 h-16 sm:h-20 ml-3 mb-3 inline-block"
-        />
+        {transactions.length > 0 && (
+          <img
+            src={gif}
+            alt="gif"
+            className="w-16 sm:w-20 h-16 sm:h-20 ml-3 mb-3 inline-block"
+          />
+        )}
       </p>
 
-      <div className="w-full flex flex-col md:flex-row justify-between gap-8">
-        {/* Kirimlar*/}
+      <div className="w-full flex flex-col md:flex-row justify-between gap-2">
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
           <div className="flex gap-5 md:flex-row">
@@ -166,7 +155,6 @@ function Analytics() {
           </div>
         </div>
 
-        {/* Chiqimlar */}
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Chiqimlar</h2>
           <div className="flex gap-5 md:flex-row">
