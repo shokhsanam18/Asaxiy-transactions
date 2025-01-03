@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 import TransactionApp from "./management";
-import State from "./state";
+import State from "./State";
 
 const Transactions = () => {
   return (
