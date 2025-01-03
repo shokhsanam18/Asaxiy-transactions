@@ -138,7 +138,7 @@ function Analytics() {
       </p>
 
       <div className="w-full flex flex-col md:flex-row justify-between gap-2">
-        <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
+        {/* <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
           <div className="flex gap-5 md:flex-row">
             <div className="w-1/2 mb-4 md:mb-0">
@@ -170,7 +170,7 @@ function Analytics() {
               )}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
