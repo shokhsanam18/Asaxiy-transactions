@@ -11,6 +11,7 @@ export const Sidebar = () => {
   return (
     <>
       {side ? (
+      <div className="hidden lg:block">
         <div className="SideBar z-10  h-screen w-[320px] sticky top-0 left-0 bg-neutral-100 flex p-5 gap-10 flex-col translate-x-0 transition-all">
           <div className="logo">
             <a href="/">
@@ -42,6 +43,7 @@ export const Sidebar = () => {
               </Link>
             </li>
           </ul>
+        </div>
         </div>
       ) : null}
     </>
