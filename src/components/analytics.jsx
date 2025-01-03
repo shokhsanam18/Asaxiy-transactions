@@ -147,7 +147,7 @@ function Analytics() {
         />
       </p>
 
-      <div className="w-full flex flex-col md:flex-row justify-between gap-8">
+      <div className="w-full flex flex-col md:flex-row justify-between gap-2">
         {/* Kirimlar*/}
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>

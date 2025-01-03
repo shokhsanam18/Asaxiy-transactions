@@ -42,7 +42,7 @@ const Modal = () => {
             />
             <label
               htmlFor="number"
-              className={`absolute z-10 left-2 top-2 peer-not-placeholder-shown:-top-2 transition-all peer-focus:-top-2 peer-focus:text-black bg-white ${errors.amount ? 'peer-focus:text-red-500' : "peer-focus:text-black"} border-slate-400 peer-focus:text-xs px-1`}
+              className={`absolute z-10 left-2 transition-all -top-2 bg-white ${errors.amount ? 'peer-focus:text-red-500' : "peer-focus:text-black"} text-slate-400 text-xs px-1`}
               >
               Tranzaksiya Miqdori
             </label>
