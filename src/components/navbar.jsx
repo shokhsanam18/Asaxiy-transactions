@@ -3,6 +3,7 @@ import { AlignJustify } from "lucide-react";
 import { BellDot } from "lucide-react";
 import Photo from "../assets/people19.png";
 import { useSidebarStore } from "../Store";
+import Logo from "../assets/asaxiy-logo.svg";
 
 export const Nav = () => {
   const { SideBarShow } = useSidebarStore();
@@ -15,6 +16,11 @@ export const Nav = () => {
         >
           <AlignJustify className="Menu text-gray-800 hover:text-gray-600" />
         </button>
+        <div className="logo lg:hidden">
+          <a href="/">
+            <img src={Logo} alt="" />
+          </a>
+        </div>
       </div>
       <div className="right flex gap-4 items-center justify-center">
         <div className="flex justify-center items-center">
