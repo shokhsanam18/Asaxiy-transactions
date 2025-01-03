@@ -6,25 +6,25 @@ import { Link } from "react-router-dom";
 
 const MiniSidebar = () => {
   return (
-    <div className="bg-blue-600 sticky bottom-0 rounded-md lg:hidden">
-      <ul className="list-none no-underline flex justify-center items-center  gap-3">
-        <li>
+    <div className="bg-blue-600 sticky bottom-0 rounded-t-2xl h-14 lg:hidden flex justify-center items-center">
+      <ul className="list-none no-underline flex justify-evenly gap-10 items-center">
+        <li className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
           <Link to="/tahlil">
-            <button className="font-bold  text-white  w-full">
+            <button className="font-bold  text-blue-500 flex justify-center">
               <ChartPie />
             </button>
           </Link>
         </li>
-        <li>
+        <li className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
           <Link to="/conversions">
-            <button className="font-bold text-white w-full">
+            <button className="font-bold  text-blue-500 flex justify-center">
               <CircleDollarSign />
             </button>
           </Link>
         </li>
-        <li>
+        <li className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
           <Link to="/transactions">
-            <button className="font-bold text-white  w-full">
+            <button className="font-bold  text-blue-500 flex justify-center">
               <ArrowLeftRight />
             </button>
           </Link>

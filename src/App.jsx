@@ -3,6 +3,7 @@ import { Layout } from "./components/layout";
 import Conversions from "./components/conversions";
 import Analytics from "./components/analytics";
 import Transactions from "./components/Transactions";
+import MiniSidebar from "./components/miniSidebar";
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
           <Route index element={<Analytics />} />
           <Route path="tahlil" element={<Analytics />} />
           <Route path="conversions" element={<Conversions />} />
-          <Route path="transactions" element={<Transactions/>} />
+          <Route path="transactions" element={<Transactions />} />
         </Route>
         <Route path="*" element={<div>404 page not found</div>} />
       </Routes>
+      <MiniSidebar />
     </>
   );
 }
