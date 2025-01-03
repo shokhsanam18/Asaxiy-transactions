@@ -8,23 +8,22 @@ import IncreaseGif from "../assets/increase.gif";
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
 
 //dynamic transactions array
-//const transactions= useStore((state)=> state.transactions);
-const { transactions } = useStore();
+// const {transactions} = useStore()
 
 //static transaction array
-// const transactions = [
-//   { amount: "100", category: "Entertainment", type: "expense", date: "" },
-//   { amount: "100", category: "Other", type: "expense", date: "" },
-//   { amount: "100", category: "Food", type: "expense", date: "" },
-//   { amount: "100", category: "Transport", type: "expense", date: "" },
-//   { amount: "100", category: "Bills", type: "expense", date: "" },
-//   { amount: "100", category: "Entertainment", type: "income", date: "" },
-//   { amount: "100", category: "Other", type: "income", date: "" },
-//   { amount: "100", category: "Food", type: "income", date: "" },
-//   { amount: "100", category: "Transport", type: "income", date: "" },
-//   { amount: "100", category: "Bills", type: "income", date: "" },
-//   { amount: "100", category: "Bills", type: "income", date: "" },
-// ];
+const transactions = [
+  { amount: "100", category: "Entertainment", type: "expense", date: "" },
+  { amount: "100", category: "Other", type: "expense", date: "" },
+  { amount: "100", category: "Food", type: "expense", date: "" },
+  { amount: "100", category: "Transport", type: "expense", date: "" },
+  { amount: "100", category: "Bills", type: "expense", date: "" },
+  { amount: "100", category: "Entertainment", type: "income", date: "" },
+  { amount: "100", category: "Other", type: "income", date: "" },
+  { amount: "100", category: "Food", type: "income", date: "" },
+  { amount: "100", category: "Transport", type: "income", date: "" },
+  { amount: "100", category: "Bills", type: "income", date: "" },
+  { amount: "100", category: "Bills", type: "income", date: "" },
+];
 
 const categories = ["Food", "Entertainment", "Transport", "Bills", "Other"];
 const categoryColors = {
@@ -148,7 +147,7 @@ function Analytics() {
         />
       </p>
 
-      <div className="w-full flex flex-col md:flex-row justify-between gap-8">
+      <div className="w-full flex flex-col md:flex-row justify-between gap-2">
         {/* Kirimlar*/}
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
