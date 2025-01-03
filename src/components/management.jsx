@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './management.css';
+// import './management.css';
+import { useStore } from "../Store";
 
 const TransactionApp = () => {
     const {transactions} = useStore()
@@ -16,11 +17,9 @@ const TransactionApp = () => {
   });
 
   return (
-    <div className="max-w-full mx-auto p-6 bg-gray-100 rounded-xl px-5 sm:px-10 lg:px-20">
+    <div className="max-w-full p-3 sm:p-6 bg-gray-50 rounded-xl px-5 sm:px-10 lg:px-20">
 
-<div className="mt-8">
-                <h2 className="text-xl font-semibold mb-4">Filtrlar</h2>
-                <div className="flex flex-col sm:flex-row gap-5 mb-4">
+        <div className="flex gap-5 mb-4">
                     <input 
                         type="date" 
                         value={filterDate} 
@@ -33,43 +32,41 @@ const TransactionApp = () => {
                         onChange={(e) => setFilterCategory(e.target.value)} 
                         className="w-full sm:w-1/2 p-3 border border-gray-300 rounded-md"
                     >
-                        <option value="">Filtrlash uchun kategoriya</option>
-                        <option value="Food">Ovqat</option>
-                        <option value="Transport">Transport</option>
-                        <option value="Clothes">Kiyim</option>
-                        <option value="Others">Boshqalar</option>
+                        <option value="">Barchasi</option>
+                        <option value="Food">Oziq-ovqat</option>
+                        <option value="Entertainment">Ko'ngilochar</option>
+                        <option value="transport">Transport</option>
+                        <option value="bills">Hisoblar</option>
+                        <option value="other">Boshqa</option>
                     </select>
-                </div>
-            </div>
+        </div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full border-collapse mt-6">
+        <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-gray-200 text-left">
-                            <th className="px-4 py-3">Miqdori</th>
-                            <th className="px-4 py-3">Kategoriya</th>
-                            <th className="px-4 py-3">Turi</th>
-                            <th className="px-4 py-3">Sanasi</th>
+                            <th className="sm:px-4 py-3 px-1">Miqdori</th>
+                            <th className="sm:px-4 py-3 px-1">Kategoriya</th>
+                            <th className="sm:px-4 py-3 px-1">Turi</th>
+                            <th className="sm:px-4 py-3 px-1">Sanasi</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredTransactions.length > 0 ? (
                             filteredTransactions.map((transaction, index) => (
                                 <tr key={index} className="hover:bg-gray-100">
-                                    <td className="px-4 py-3">{transaction.amount}</td>
-                                    <td className="px-4 py-3">{transaction.category}</td>
-                                    <td className="px-4 py-3">{transaction.type}</td>
-                                    <td className="px-4 py-3">{transaction.date}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.amount}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.category}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.type}</td>
+                                    <td className="sm:px-4 py-3 px-1">{transaction.date}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="4" className="px-4 py-3 text-center">Ma'lumotlar mavjud emas</td>
+                                <td colSpan="4" className="sm:px-4 py-3 px-1 text-center">Ma'lumotlar mavjud emas</td>
                             </tr>
                         )}
                     </tbody>
-                </table>
-            </div>
+        </table>
     </div>
   );
 };

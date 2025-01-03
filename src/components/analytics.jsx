@@ -139,7 +139,7 @@ function Analytics() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-10 px-4 py-8 bg-white">
-      <p className="text-4xl sm:text-5xl md:text-6xl">
+      <p className="text-5xl md:text-6xl">
         {balance}
         <img
           src={gif}
@@ -152,14 +152,14 @@ function Analytics() {
         {/* Kirimlar*/}
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
-          <div className="flex flex-col gap-5 md:flex-row">
-            <div className="w-full md:w-1/2 mb-4 md:mb-0">
+          <div className="flex gap-5 md:flex-row">
+            <div className="w-1/2 mb-4 md:mb-0">
               <Pie data={incomeData} options={{ cutout: "50%" }} />
               <p className="text-lg text-center mt-2">
                 {Object.values(categoryIncome).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-1/2">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryIncome)
               )}
@@ -170,14 +170,14 @@ function Analytics() {
         {/* Chiqimlar */}
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Chiqimlar</h2>
-          <div className="flex flex-col gap-5 md:flex-row">
-            <div className="w-full md:w-1/2 mb-4 md:mb-0">
+          <div className="flex gap-5 md:flex-row">
+            <div className="w-1/2 mb-4 md:mb-0">
               <Pie data={expenseData} options={{ cutout: "50%" }} />
               <p className="text-lg text-center mt-2">
                 {Object.values(categoryExpense).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-1/2">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryExpense)
               )}
