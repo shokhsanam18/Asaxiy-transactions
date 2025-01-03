@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const MiniSidebar = () => {
   return (
     <div className="bg-blue-600 sticky bottom-0 rounded-t-2xl h-14 lg:hidden flex justify-center items-center">
-      <ul className="list-none no-underline flex justify-evenly gap-14 items-center">
+      <ul className="list-none no-underline flex justify-evenly gap-12 items-center w-full">
         <li className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
           <Link to="/tahlil">
             <button className="font-bold  text-blue-500 flex justify-center">

@@ -43,7 +43,7 @@ export default function CurrencyRow(props) {
       </div>
 
       <button
-        className="font-semibold bg-white text-blue-600 px-5 py-3 rounded-lg cursor-pointer"
+        className="font-semibold bg-white text-blue-600 px-5 py-3 rounded-lg cursor-pointer border-2 border-gray-300"
         onClick={toggleModal}
       >
         {selectedCurrency || "Select Currency"}
