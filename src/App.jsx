@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/layout";
 import Conversions from "./components/conversions";
 import Analytics from "./components/analytics";
-import Transactions from "./components/Transactions";
+import Transactions from "./components/transactions";
 import MiniSidebar from "./components/miniSidebar";
 
 function App() {
