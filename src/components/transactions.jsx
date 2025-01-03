@@ -6,8 +6,8 @@ import State from "./state";
 const Transactions = () => {
   return (
     <section className="w-full">
-      <State/>
-      <Modal/>
+      <State />
+      <Modal />
       <TransactionApp />
     </section>
   );
