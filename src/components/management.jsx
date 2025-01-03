@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import './management.css';
 import { useStore } from "../Store";
+import { Circle } from 'lucide-react';
 
 const TransactionApp = () => {
     const {transactions} = useStore()
@@ -56,7 +57,7 @@ const TransactionApp = () => {
                                 <tr key={index} className="hover:bg-gray-100">
                                     <td className="sm:px-4 py-3 px-1">{transaction.amount}</td>
                                     <td className="sm:px-4 py-3 px-1">{transaction.category}</td>
-                                    <td className="sm:px-4 py-3 px-1">{transaction.type}</td>
+                                    <td className="sm:px-4 py-3 px-1 flex gap-1 items-center">{transaction.type} <div className={`w-4 h-4 rounded-full ${transaction.type === 'income' ? 'bg-lime-600' : 'bg-red-500'} `}></div> </td>
                                     <td className="sm:px-4 py-3 px-1">{transaction.date}</td>
                                 </tr>
                             ))
