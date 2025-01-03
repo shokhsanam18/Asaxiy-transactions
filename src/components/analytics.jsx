@@ -138,16 +138,16 @@ function Analytics() {
       </p>
 
       <div className="w-full flex flex-col md:flex-row justify-between gap-2">
-        {/* <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
+        <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
-          <div className="flex gap-5 md:flex-row">
-            <div className="w-1/2 mb-4 md:mb-0">
+          <div className="flex max-[400px]:flex-col max-[400px]:items-center gap-5 md:flex-row">
+            <div className="w-1/2  mb-4 max-[400px]:w-full md:mb-0">
               <Pie data={incomeData} options={{ cutout: "50%" }} />
               <p className="text-lg text-center mt-2">
                 {Object.values(categoryIncome).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 max-[400px]:w-full">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryIncome)
               )}
@@ -157,20 +157,20 @@ function Analytics() {
 
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Chiqimlar</h2>
-          <div className="flex gap-5 md:flex-row">
-            <div className="w-1/2 mb-4 md:mb-0">
+          <div className="flex max-[400px]:flex-col max-[400px]:items-center gap-5 md:flex-row">
+            <div className="w-1/2 max-[400px]:w-full mb-4 md:mb-0">
               <Pie data={expenseData} options={{ cutout: "50%" }} />
               <p className="text-lg text-center mt-2">
                 {Object.values(categoryExpense).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 max-[400px]:w-full ">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryExpense)
               )}
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
