@@ -16,10 +16,10 @@ const State = () => {
     const total = income - expense
   return (
     <div className="flex flex-col py-3 px-2 gap-4 w-full">
-    <div className="flex w-full justify-between mb-5">
+    <div className="flex w-full items-center justify-between mb-5">
       <h2 className="text-3xl text-black font-normal">Tranzaksyalar</h2>
         <button
-          className="bg-blue-600 py-2 outline-none uppercase font-semibold transition ease-in-out duration-300 hover:shadow-xl text-sm px-5 text-white rounded-lg"
+          className="bg-blue-600 py-2 outline-none uppercase font-semibold transition ease-in-out duration-300 hover:shadow-xl sm:px-5  text-white rounded-lg px-4 sm:text-sm  text-[0.8rem]"
           onClick={openfunc}
         >
           Transaksya qo'shish
