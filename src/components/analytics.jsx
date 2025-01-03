@@ -8,22 +8,22 @@ import IncreaseGif from "../assets/increase.gif";
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
 
 //dynamic transactions array
-const {transactions}= useStore();
+// const {transactions} = useStore()
 
 //static transaction array
-// const transactions = [
-//   { amount: "100", category: "Entertainment", type: "expense", date: "" },
-//   { amount: "100", category: "Other", type: "expense", date: "" },
-//   { amount: "100", category: "Food", type: "expense", date: "" },
-//   { amount: "100", category: "Transport", type: "expense", date: "" },
-//   { amount: "100", category: "Bills", type: "expense", date: "" },
-//   { amount: "100", category: "Entertainment", type: "income", date: "" },
-//   { amount: "100", category: "Other", type: "income", date: "" },
-//   { amount: "100", category: "Food", type: "income", date: "" },
-//   { amount: "100", category: "Transport", type: "income", date: "" },
-//   { amount: "100", category: "Bills", type: "income", date: "" },
-//   { amount: "100", category: "Bills", type: "income", date: "" },
-// ];
+const transactions = [
+  { amount: "100", category: "Entertainment", type: "expense", date: "" },
+  { amount: "100", category: "Other", type: "expense", date: "" },
+  { amount: "100", category: "Food", type: "expense", date: "" },
+  { amount: "100", category: "Transport", type: "expense", date: "" },
+  { amount: "100", category: "Bills", type: "expense", date: "" },
+  { amount: "100", category: "Entertainment", type: "income", date: "" },
+  { amount: "100", category: "Other", type: "income", date: "" },
+  { amount: "100", category: "Food", type: "income", date: "" },
+  { amount: "100", category: "Transport", type: "income", date: "" },
+  { amount: "100", category: "Bills", type: "income", date: "" },
+  { amount: "100", category: "Bills", type: "income", date: "" },
+];
 
 const categories = ["Food", "Entertainment", "Transport", "Bills", "Other"];
 const categoryColors = {
