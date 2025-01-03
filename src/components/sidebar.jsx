@@ -17,7 +17,7 @@ export const Sidebar = () => {
               <img src={Logo} alt="" />
             </a>
           </div>
-          <ul className="list-none no-underline flex justify-center items-start flex-col gap-2">
+          <ul className="list-none no-underline flex justify-center items-start flex-col gap-3">
             <li className=" w-[260px] ">
               <Link to="/tahlil">
                 <button className="font-bold  bg-blue-600 text-white rounded-md flex items-center justify-start gap-3 p-3 text-xs uppercase w-full hover:shadow-xl">
