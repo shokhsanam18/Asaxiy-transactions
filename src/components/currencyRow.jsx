@@ -26,7 +26,9 @@ export default function CurrencyRow(props) {
 
   return (
     <div className="flex justify-center w-full ">
-      <div className="bg-blue-600 p-4 rounded-lg w-full max-w-[500px] mb-5">
+      <div className="flex items-stretch w-full  mb-5">
+
+      <div className="bg-blue-600 px-5 py-3 rounded-lg w-full max-w-[500px]">
         <input
           type="text"
           className="text-white w-full p-3 rounded-lg focus:outline-none bg-blue-600 text-lg"
@@ -43,11 +45,12 @@ export default function CurrencyRow(props) {
       </div>
 
       <button
-        className="font-semibold bg-white text-blue-600 px-5 py-3 rounded-lg cursor-pointer hover:border-2 border-gray-300 "
+        className="font-semibold bg-white text-blue-600 px-5 py-3 rounded-lg cursor-pointer border-2 border-gray-200 "
         onClick={toggleModal}
       >
         {selectedCurrency || "Select Currency"}
       </button>
+      </div>
 
       {isModalOpen && (
         <div
