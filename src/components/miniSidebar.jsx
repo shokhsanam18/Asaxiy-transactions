@@ -4,9 +4,9 @@ import { ChartPie } from "lucide-react";
 import { CircleDollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export const MiniSidebar = () => {
+const MiniSidebar = () => {
   return (
-    <div className="bg-blue-600">
+    <div className="bg-blue-600 sticky bottom-0 rounded-md lg:hidden">
       <ul className="list-none no-underline flex justify-center items-center  gap-3">
         <li>
           <Link to="/tahlil">
@@ -33,3 +33,5 @@ export const MiniSidebar = () => {
     </div>
   );
 };
+
+export default MiniSidebar;
