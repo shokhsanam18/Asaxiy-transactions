@@ -54,9 +54,9 @@ const Modal = () => {
           >
             <option value="Food">Oziq-ovqat</option>
             <option value="Entertainment">Ko'ngilochar</option>
-            <option value="transport">Transport</option>
-            <option value="bills">Hisoblar</option>
-            <option value="other">Boshqa</option>
+            <option value="Transport">Transport</option>
+            <option value="Bills">Hisoblar</option>
+            <option value="Other">Boshqa</option>
           </select>
           <div className="flex gap-3 items-center">
             <h4 className="text-lg font-normal">Tranzaksiya turi:</h4>
