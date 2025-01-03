@@ -75,7 +75,7 @@ function Conversions() {
   }
 
   return (
-    <div className="w-full flex justify-center items-center flex-col p-8 shadow-md text-xl">
+    <div className="w-full flex justify-center items-center flex-col p-8 text-xl">
       <h2 className="text-xl font-semibold uppercase">Valyuta kursi</h2>
       {error && <div className="text-red-500 mt-4">{error}</div>}
       <div className="w-full max-w-md mt-6">
