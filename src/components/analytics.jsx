@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import useStore from "./components/store";
+// import { useStore } from "../Store";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import DecreaseGif from "../assets/decrease.gif";
