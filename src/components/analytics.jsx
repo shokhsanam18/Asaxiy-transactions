@@ -118,7 +118,7 @@ function Analytics() {
         className="w-4 h-4 mr-2"
         style={{ backgroundColor: categoryColors[category] }}
       ></div>
-      <p className="text-lg">
+      <p className="text-lg max-[400px]:text-sm">
         {category}: {categoryData[category] > 0 ? categoryData[category] : "0"}
       </p>
     </div>
@@ -140,14 +140,14 @@ function Analytics() {
       <div className="w-full flex flex-col md:flex-row justify-between gap-2">
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Kirimlar</h2>
-          <div className="flex max-[400px]:flex-col max-[400px]:items-center gap-5 md:flex-row">
-            <div className="w-1/2  mb-4 max-[400px]:w-full md:mb-0">
+          <div className="flex max-[400px]:text-[8px] gap-5 items-center md:flex-row">
+            <div className="w-1/2 md:mb-0">
               <Pie data={incomeData} options={{ cutout: "50%" }} />
-              <p className="text-lg text-center mt-2">
+              <p className="text-lg  max-[400px]:text-sm text-center mt-2">
                 {Object.values(categoryIncome).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-1/2 max-[400px]:w-full">
+            <div className="w-1/2">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryIncome)
               )}
@@ -157,14 +157,14 @@ function Analytics() {
 
         <div className="w-full sm:w-full md:w-[45%] bg-white shadow-lg p-4 rounded-lg">
           <h2 className="text-xl sm:text-2xl mb-4">Chiqimlar</h2>
-          <div className="flex max-[400px]:flex-col max-[400px]:items-center gap-5 md:flex-row">
-            <div className="w-1/2 max-[400px]:w-full mb-4 md:mb-0">
+          <div className="flex max-[400px]:text-[8px] items-center gap-5 md:flex-row">
+            <div className="w-1/2 mb-4 md:mb-0">
               <Pie data={expenseData} options={{ cutout: "50%" }} />
-              <p className="text-lg text-center mt-2">
+              <p className="text-lg max-[400px]:text-sm text-center mt-2">
                 {Object.values(categoryExpense).reduce((a, b) => a + b, 0)}
               </p>
             </div>
-            <div className="w-1/2 max-[400px]:w-full ">
+            <div className="w-1/2">
               {categories.map((category) =>
                 renderCategoryDetails(category, categoryExpense)
               )}
