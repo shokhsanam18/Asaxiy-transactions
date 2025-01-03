@@ -103,7 +103,7 @@ const Modal = () => {
             type="date"
             {...register("date")}
             id="date"
-            className="peer border-slate-400 border-[1px] w-full rounded py-2 px-3 focus:border-2"
+            className="peer bg-white border-slate-400 border-[1px] w-full rounded py-2 px-3 focus:border-2"
           />
           <label
             htmlFor="number"
