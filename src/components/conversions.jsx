@@ -75,8 +75,8 @@ function Conversions() {
   }
 
   return (
-    <div className="w-full flex justify-center items-center flex-col p-8 shadow-md">
-      <h2 className="text-xl font-semibold">Valyuta kursi</h2>
+    <div className="w-full flex justify-center items-center flex-col p-8 shadow-md text-xl">
+      <h2 className="text-xl font-semibold uppercase">Valyuta kursi</h2>
       {error && <div className="text-red-500 mt-4">{error}</div>}
       <div className="w-full max-w-md mt-6">
         <CurrencyRow
@@ -96,11 +96,12 @@ function Conversions() {
           onChangeAmount={handleToAmountChange}
           amount={toAmount}
         />
-        <p className="text-xl text-center mt-4">Konvertatsiya qilingan holati</p>
+        <p className="text-xl text-center mt-4">
+          Konvertatsiya qilingan holati
+        </p>
       </div>
     </div>
   );
 }
-
 
 export default Conversions;
